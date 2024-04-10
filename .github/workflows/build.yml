@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches: main
+  pull_request:
+    branches: main
 
 jobs:
   build-deploy:
@@ -24,13 +26,8 @@ jobs:
         run: |
             quarto add --no-prompt computorg/computo-quarto-extension
 
-      - name: Install Jupyter
-        run: sudo apt-get install -y jupyter
-
       - name: Install Julia
         uses: julia-actions/setup-julia@v2
-        with:
-          version: '1.10'
       - uses: julia-actions/cache@v1
         with:
           cache-registries: "true"
