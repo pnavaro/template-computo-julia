@@ -49,3 +49,6 @@ template-computo-julia.tex
 DS_Store
 /.luarc.json
 
+# Julia
+Manifest.toml
+
